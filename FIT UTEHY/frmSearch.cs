@@ -93,7 +93,7 @@ namespace FIT_UTEHY
                         if (ckbSubject.Checked == false)
                         {
                             data = from d in db.CanBoes
-                                   where (d.MaCB.ToString()).Contains(txtKey.Text)
+                                   where (d.Hovaten.ToString()).Contains(txtKey.Text)
                                    select new { d.MaCB, d.Hovaten, d.Gioitinh, d.Ngaysinh, d.Quequan, d.BoMon.TenBM, d.TrinhDo.TenTD, d.ChucVu.TenCV, d.Email, d.DT, d.Hinhanh };
                         }
                         else
@@ -131,7 +131,8 @@ namespace FIT_UTEHY
         {
             if (ckbSubject.Checked == true)
             {
-                var data = db.GetCanBoByMaBM((short)cboSubject.SelectedValue);
+                var data = from d in db.GetCanBoByMaBM((short)cboSubject.SelectedValue)
+                           select new { d.MaCB, d.Hovaten, d.Gioitinh, d.Ngaysinh, d.Quequan, d.TenBM, d.TenTD, d.TenCV, d.Email, d.DT, d.Hinhanh };
                 dgvSearch.DataSource = data.ToList();
             }
         }

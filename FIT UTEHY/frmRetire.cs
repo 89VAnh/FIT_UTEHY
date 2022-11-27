@@ -24,6 +24,14 @@ namespace FIT_UTEHY
                        select new {d.MaCB,d.Hovaten,d.NgayNghi,d.BoMon.TenBM};
             dgvRetire.DataSource = data.ToList();
         }
+        private void infoRefresh()
+        {
+            txtID.Clear();
+            txtName.Clear();
+            dtRetire.Text="";          
+            cboSubject.SelectedIndex = 0;
+            txtKeyword.Clear();
+        }
 
         private void frmRetire_Load(object sender, EventArgs e)
         {
@@ -33,20 +41,10 @@ namespace FIT_UTEHY
             cboSubject.DataSource = db.BoMons.ToList();
             cboSubject.ValueMember = "MaBM";
             cboSubject.DisplayMember = "TenBM";
-            Refresh();
+            infoRefresh();
 
         }
 
-        private void Refresh()
-        {
-            txtID.Clear();
-            txtName.Clear();
-            dtRetire.Text="";          
-            cboSubject.SelectedIndex = 0;
-            txtKeyword.Clear();
-            
-
-        }
         private void txtAdd_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có muốn thêm không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)

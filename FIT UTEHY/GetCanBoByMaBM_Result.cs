@@ -24,5 +24,8 @@ namespace FIT_UTEHY
         public string Email { get; set; }
         public string DT { get; set; }
         public byte[] Hinhanh { get; set; }
+        public string TenBM { get; set; }
+        public string TenCV { get; set; }
+        public string TenTD { get; set; }
     }
 }

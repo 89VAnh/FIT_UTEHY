@@ -101,8 +101,10 @@ namespace FIT_UTEHY
 
         private void btnAccount_Click(object sender, EventArgs e)
         {
+            this.Hide();
             frmInfo f = new frmInfo();
             f.ShowDialog();
+            this.Close();
         }
     }
 }

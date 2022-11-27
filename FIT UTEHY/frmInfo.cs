@@ -60,7 +60,7 @@ namespace FIT_UTEHY
                 user.Hinhanh = Global.ImgToBase64(picture.Image, picture.Image.RawFormat);
                 db.SaveChanges();
                 Global.CurrentUser = db.TaiKhoans.SingleOrDefault(tk => tk.TenDangNhap == Global.CurrentUser.TenDangNhap);
-                MessageBox.Show("Đã sửa thành công !");
+                MessageBox.Show("Cập nhật thành công !");
                 frmInfo_Load(sender, e);
             }
             else
@@ -69,8 +69,16 @@ namespace FIT_UTEHY
             }
         }
 
-        private void frmInfo_FormClosed(object sender, FormClosedEventArgs e)
+       
+
+        private void btnReturnMain_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            frmMain f = new frmMain();
+            f.ShowDialog();
+            this.Close();
         }
+
+       
     }
 }

@@ -354,6 +354,10 @@
     <None Include="Resources\logo_utehy.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\changg.jpg" />
+    <None Include="Resources\image.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="QLCBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>QLCBModel.edmx</DependentUpon>
@@ -364,8 +368,6 @@
       <DependentUpon>QLCBModel.edmx</DependentUpon>
       <LastGenOutput>QLCBModel.cs</LastGenOutput>
     </Content>
-    <None Include="Resources\changg.jpg" />
-    <None Include="Resources\image.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

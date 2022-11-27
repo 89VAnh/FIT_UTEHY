@@ -300,12 +300,16 @@
           <Property Type="String" Name="Email" Nullable="true" MaxLength="100" />
           <Property Type="String" Name="DT" Nullable="true" MaxLength="10" />
           <Property Type="Binary" Name="Hinhanh" Nullable="true" />
+          <Property Type="String" Name="TenBM" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TenCV" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TenTD" Nullable="true" MaxLength="50" />
         </ComplexType>
         <ComplexType Name="GetNghiHuuByMaBM_Result">
           <Property Type="Int32" Name="MaCB" Nullable="false" />
           <Property Type="String" Name="Hovaten" Nullable="true" MaxLength="50" />
           <Property Type="DateTime" Name="NgayNghi" Nullable="true" Precision="23" />
           <Property Type="Int16" Name="MaBM" Nullable="true" />
+          <Property Type="String" Name="TenBM" Nullable="true" MaxLength="50" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -390,6 +394,9 @@
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="DT" ColumnName="DT" />
                 <ScalarProperty Name="Hinhanh" ColumnName="Hinhanh" />
+                <ScalarProperty Name="TenBM" ColumnName="TenBM" />
+                <ScalarProperty Name="TenCV" ColumnName="TenCV" />
+                <ScalarProperty Name="TenTD" ColumnName="TenTD" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -400,6 +407,7 @@
                 <ScalarProperty Name="Hovaten" ColumnName="Hovaten" />
                 <ScalarProperty Name="NgayNghi" ColumnName="NgayNghi" />
                 <ScalarProperty Name="MaBM" ColumnName="MaBM" />
+                <ScalarProperty Name="TenBM" ColumnName="TenBM" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

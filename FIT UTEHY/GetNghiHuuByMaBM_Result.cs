@@ -17,5 +17,6 @@ namespace FIT_UTEHY
         public string Hovaten { get; set; }
         public Nullable<System.DateTime> NgayNghi { get; set; }
         public Nullable<short> MaBM { get; set; }
+        public string TenBM { get; set; }
     }
 }
