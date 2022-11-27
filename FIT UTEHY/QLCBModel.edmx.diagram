@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7d13d4604c444bd9b9750f6d9ccc86ce" Name="Diagram1">
+        <EntityTypeShape EntityType="QLCBModel.BoMon" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLCBModel.CanBo" Width="1.5" PointX="3" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLCBModel.ChucVu" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLCBModel.NghiHuu" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLCBModel.TaiKhoan" Width="1.5" PointX="5.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLCBModel.TrinhDo" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <AssociationConnector Association="QLCBModel.FK__CanBo__MaBM__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCBModel.FK__NghiHuu__MaBM__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCBModel.FK__CanBo__MaCV__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCBModel.FK__CanBo__MaTD__571DF1D5" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
