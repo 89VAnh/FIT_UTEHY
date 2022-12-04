@@ -187,7 +187,23 @@ namespace FIT_UTEHY
 
         private void tsbPrint_Click(object sender, EventArgs e)
         {
-            frmCadresReport frm = new frmCadresReport();
+            var data = db.CanBoes.Select(cb => new
+            {
+                cb.MaCB,
+                cb.Hovaten,
+                cb.Gioitinh,
+                cb.Ngaysinh,
+                cb.Quequan,
+                cb.BoMon.TenBM,
+                cb.TrinhDo.TenTD,
+                cb.ChucVu.TenCV,
+                cb.Email,
+                cb.DT
+            }).ToList();
+            rptReportCadres rpt = new rptReportCadres();
+            rpt.SetDataSource(data.ToList());
+            frmReport frm = new frmReport();
+            frm.crystalReport.ReportSource = rpt;
             frm.ShowDialog();
         }
 

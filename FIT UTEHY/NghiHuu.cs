@@ -16,8 +16,8 @@ namespace FIT_UTEHY
     {
         public int MaCB { get; set; }
         public string Hovaten { get; set; }
-        public Nullable<System.DateTime> NgayNghi { get; set; }
-        public Nullable<short> MaBM { get; set; }
+        public System.DateTime NgayNghi { get; set; }
+        public short MaBM { get; set; }
     
         public virtual BoMon BoMon { get; set; }
     }

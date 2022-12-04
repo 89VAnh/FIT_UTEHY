@@ -37,7 +37,7 @@
             this.txtKeyword = new System.Windows.Forms.ToolStripTextBox();
             this.tsbSearch = new System.Windows.Forms.ToolStripButton();
             this.tsbExport = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+            this.tsbPrint = new System.Windows.Forms.ToolStripButton();
             this.dtRetire = new System.Windows.Forms.DateTimePicker();
             this.cboSubject = new System.Windows.Forms.ComboBox();
             this.txtID = new System.Windows.Forms.TextBox();
@@ -77,7 +77,7 @@
             this.txtKeyword,
             this.tsbSearch,
             this.tsbExport,
-            this.toolStripButton6});
+            this.tsbPrint});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1125, 48);
@@ -145,15 +145,16 @@
             this.tsbExport.Text = "Kết xuất";
             this.tsbExport.Click += new System.EventHandler(this.tsbExport_Click);
             // 
-            // toolStripButton6
+            // tsbPrint
             // 
-            this.toolStripButton6.AutoSize = false;
-            this.toolStripButton6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton6.Image = global::FIT_UTEHY.Properties.Resources.printer;
-            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(130, 48);
-            this.toolStripButton6.Text = "In ấn";
+            this.tsbPrint.AutoSize = false;
+            this.tsbPrint.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsbPrint.Image = global::FIT_UTEHY.Properties.Resources.printer;
+            this.tsbPrint.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbPrint.Name = "tsbPrint";
+            this.tsbPrint.Size = new System.Drawing.Size(130, 48);
+            this.tsbPrint.Text = "In ấn";
+            this.tsbPrint.Click += new System.EventHandler(this.tsbPrint_Click);
             // 
             // dtRetire
             // 
@@ -258,6 +259,7 @@
             this.dgvRetire.Name = "dgvRetire";
             this.dgvRetire.RowHeadersWidth = 51;
             this.dgvRetire.RowTemplate.Height = 24;
+            this.dgvRetire.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRetire.Size = new System.Drawing.Size(1119, 324);
             this.dgvRetire.TabIndex = 0;
             this.dgvRetire.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRetire_CellClick);
@@ -378,7 +380,7 @@
         private System.Windows.Forms.ToolStripTextBox txtKeyword;
         private System.Windows.Forms.ToolStripButton tsbSearch;
         private System.Windows.Forms.ToolStripButton tsbExport;
-        private System.Windows.Forms.ToolStripButton toolStripButton6;
+        private System.Windows.Forms.ToolStripButton tsbPrint;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

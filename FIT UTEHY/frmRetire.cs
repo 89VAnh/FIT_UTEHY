@@ -85,6 +85,7 @@ namespace FIT_UTEHY
             cb.Hovaten = txtName.Text;
             cb.MaBM = Convert.ToInt16(cboSubject.SelectedValue);
             cb.NgayNghi = dtRetire.Value;
+            db.SaveChanges();
             MessageBox.Show("Đã sửa thành công !");
             frmRetire_Load(sender, e);
         }
@@ -151,6 +152,24 @@ namespace FIT_UTEHY
             var data = from d in db.NghiHuus
                        select new { d.MaCB, d.Hovaten, d.NgayNghi, d.BoMon.TenBM };
             dgvRetire.DataSource = data.ToList();
+        }
+
+        private void tsbPrint_Click(object sender, EventArgs e)
+        {
+            var data = db.NghiHuus.Select(nh => new
+            {
+                nh.MaCB,
+                nh.Hovaten,
+                nh.NgayNghi,
+                nh.BoMon.TenBM              
+            }).ToList();
+            rptReportRetire rpt = new rptReportRetire();
+            rpt.SetDataSource(data.ToList());
+            frmReport frm = new frmReport();
+            frm.crystalReport.ReportSource = rpt;
+            //crystalReportCadres.RefreshReport();
+            frm.ShowDialog();
+
         }
     }
 }
