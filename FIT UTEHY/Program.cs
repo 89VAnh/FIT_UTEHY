@@ -17,9 +17,7 @@ namespace FIT_UTEHY
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //Application.Run(new frmLogin());
-
-            Application.Run(new frmSearch());
+            Application.Run(new frmLogin());
         }
     }
 }

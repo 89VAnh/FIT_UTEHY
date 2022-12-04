@@ -17,16 +17,16 @@ namespace FIT_UTEHY
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public BoMon()
         {
-            this.CanBoes = new HashSet<CanBo>();
             this.NghiHuus = new HashSet<NghiHuu>();
+            this.CanBoes = new HashSet<CanBo>();
         }
     
         public short MaBM { get; set; }
         public string TenBM { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CanBo> CanBoes { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NghiHuu> NghiHuus { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CanBo> CanBoes { get; set; }
     }
 }

@@ -44,7 +44,7 @@ namespace FIT_UTEHY
                             user.MatKhau = txtNewPw.Text;
                             db.SaveChanges();
                             Global.CurrentUser.MatKhau = txtNewPw.Text;
-                            MessageBox.Show("Thay đổi mật khẩu thành công");
+                            MessageBox.Show("Thay đổi mật khẩu thành công!");
                         }
                     }
                     else
@@ -55,7 +55,6 @@ namespace FIT_UTEHY
                 }
                 else
                 {
-
                     MessageBox.Show("Mật khẩu cũ không chính xác");
                     txtOldPw.Focus();
                 }

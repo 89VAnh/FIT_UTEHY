@@ -17,9 +17,9 @@ namespace FIT_UTEHY
         public int MaCB { get; set; }
         public string Hovaten { get; set; }
         public string Gioitinh { get; set; }
-        public Nullable<System.DateTime> Ngaysinh { get; set; }
+        public System.DateTime Ngaysinh { get; set; }
         public string Quequan { get; set; }
-        public Nullable<short> MaBM { get; set; }
+        public short MaBM { get; set; }
         public string MaTD { get; set; }
         public string MaCV { get; set; }
         public string Email { get; set; }

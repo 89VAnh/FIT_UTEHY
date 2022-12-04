@@ -57,6 +57,6 @@
 
         #endregion
 
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportCadres;
+        public CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportCadres;
     }
 }

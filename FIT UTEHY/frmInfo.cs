@@ -52,8 +52,7 @@ namespace FIT_UTEHY
         {
             if (txtName.Text.Trim() != "" && txtPhone.Text.Trim() != "" && txtEmail.Text.Trim() != "")
             {
-
-                TaiKhoan user = db.TaiKhoans.SingleOrDefault(tk => tk.TenDangNhap == txtUserName.Text);
+                TaiKhoan user = db.TaiKhoans.SingleOrDefault(tk => tk.TenDangNhap == txtUserName.Text);//lấy về 1 bản ghi đơn nhất hoặc kh ; tk: đại diện cho tài khoản tm đk sau dấu suy ra          
                 user.HoTen = txtName.Text;
                 user.Email = txtEmail.Text;
                 user.DT = txtPhone.Text;
@@ -69,16 +68,12 @@ namespace FIT_UTEHY
             }
         }
 
-       
-
-        private void btnReturnMain_Click(object sender, EventArgs e)
+        private void lbReturnMain_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
             frmMain f = new frmMain();
             f.ShowDialog();
             this.Close();
         }
-
-       
     }
 }

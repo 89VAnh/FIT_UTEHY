@@ -42,7 +42,6 @@ namespace FIT_UTEHY
             cboSubject.ValueMember = "MaBM";
             cboSubject.DisplayMember = "TenBM";
             infoRefresh();
-
         }
 
         private void txtAdd_Click(object sender, EventArgs e)
@@ -61,7 +60,6 @@ namespace FIT_UTEHY
                     MessageBox.Show("Đã thêm thành công !");
                     frmRetire_Load(sender,e);
                 }
-
                 else
                 {
                     MessageBox.Show("Vui lòng điền đầy đủ thông tin !", "Thông báo", MessageBoxButtons.OK);
@@ -69,15 +67,15 @@ namespace FIT_UTEHY
                         errID.SetError(txtID, "Thiếu thông tin");
                     if (txtName.Text.Trim() == "")
                         errName.SetError(txtName, "Thiếu thông tin");
-
                 }
             }
         }
 
         private void cboSubject_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            //var data = db.GetNghiHuuByMaBM((short)cboSubject.SelectedValue);
-            //dgvRetire.DataSource = data.ToList();
+            var data = from d in db.GetNghiHuuByMaBM((short)cboSubject.SelectedValue)
+                       select new { d.MaCB, d.Hovaten, d.NgayNghi, d.TenBM };
+            dgvRetire.DataSource = data.ToList();
         }
 
         private void tsbEdit_Click(object sender, EventArgs e)
@@ -120,12 +118,6 @@ namespace FIT_UTEHY
                        where d.Hovaten.Contains(txtKeyword.Text)
                        select new { d.MaCB, d.Hovaten, d.NgayNghi, d.BoMon.TenBM };
             dgvRetire.DataSource = data.ToList();
-            
-        }
-
-        private void dgvRetire_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void tsbExport_Click(object sender, EventArgs e)
@@ -149,7 +141,6 @@ namespace FIT_UTEHY
                 XcelApp.Visible = true;
             }
         }
-
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             txtID.Clear();
@@ -160,9 +151,6 @@ namespace FIT_UTEHY
             var data = from d in db.NghiHuus
                        select new { d.MaCB, d.Hovaten, d.NgayNghi, d.BoMon.TenBM };
             dgvRetire.DataSource = data.ToList();
-
         }
-
-      
     }
 }

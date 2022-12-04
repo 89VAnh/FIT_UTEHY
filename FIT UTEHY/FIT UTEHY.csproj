@@ -95,6 +95,11 @@
     <Compile Include="ChucVu.cs">
       <DependentUpon>QLCBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="dsDSCB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDSCB.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,12 +136,6 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmWelcome2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmWelcome2.Designer.cs">
-      <DependentUpon>frmWelcome2.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmCadres.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,12 +147,6 @@
     </Compile>
     <Compile Include="frmRetire.Designer.cs">
       <DependentUpon>frmRetire.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmLogin2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmLogin2.Designer.cs">
-      <DependentUpon>frmLogin2.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSearch.cs">
       <SubType>Form</SubType>
@@ -218,17 +211,11 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmWelcome2.resx">
-      <DependentUpon>frmWelcome2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmCadres.resx">
       <DependentUpon>frmCadres.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRetire.resx">
       <DependentUpon>frmRetire.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmLogin2.resx">
-      <DependentUpon>frmLogin2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSearch.resx">
       <DependentUpon>frmSearch.cs</DependentUpon>
@@ -248,6 +235,17 @@
       <LastGenOutput>rptReportCadres.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="App.Config" />
+    <None Include="dsDSCB.xsc">
+      <DependentUpon>dsDSCB.xsd</DependentUpon>
+    </None>
+    <None Include="dsDSCB.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDSCB.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsDSCB.xss">
+      <DependentUpon>dsDSCB.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

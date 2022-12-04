@@ -21,7 +21,19 @@ namespace FIT_UTEHY
         {
             QLCBEntities db = new QLCBEntities();
 
-            var data = db.CanBoes;
+            var data = db.CanBoes.Select(cb => new
+            {
+                cb.MaCB,
+                cb.Hovaten,
+                cb.Gioitinh,
+                cb.Ngaysinh,
+                cb.Quequan,
+                cb.BoMon.TenBM,
+                cb.TrinhDo.TenTD,
+                cb.ChucVu.TenCV,
+                cb.Email,
+                cb.DT
+            }).ToList();
             rptReportCadres rpt = new rptReportCadres();
             rpt.SetDataSource(data.ToList());
 

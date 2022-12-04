@@ -6,16 +6,16 @@
     <edmx:Diagrams>
       <Diagram DiagramId="b1c85b99a37042219095bd2602468918" Name="Diagram1">
         <EntityTypeShape EntityType="QLCBModel.BoMon" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLCBModel.CanBo" Width="1.5" PointX="3" PointY="2.875" IsExpanded="true" />
         <EntityTypeShape EntityType="QLCBModel.ChucVu" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="QLCBModel.NghiHuu" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
         <EntityTypeShape EntityType="QLCBModel.TaiKhoan" Width="1.5" PointX="5.75" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="QLCBModel.TrinhDo" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
-        <AssociationConnector Association="QLCBModel.FK__CanBo__MaBM__5629CD9C" ManuallyRouted="false" />
         <AssociationConnector Association="QLCBModel.FK__NghiHuu__MaBM__52593CB8" ManuallyRouted="false" />
-        <AssociationConnector Association="QLCBModel.FK__CanBo__MaCV__5812160E" ManuallyRouted="false" />
-        <AssociationConnector Association="QLCBModel.FK__CanBo__MaTD__571DF1D5" ManuallyRouted="false" />
-      </Diagram>
+        <EntityTypeShape EntityType="QLCBModel.CanBo" Width="1.5" PointX="3" PointY="2.875" />
+        <AssociationConnector Association="QLCBModel.FK__CanBo__MaBM__5629CD9C" />
+        <AssociationConnector Association="QLCBModel.FK__CanBo__MaCV__5812160E" />
+        <AssociationConnector Association="QLCBModel.FK__CanBo__MaTD__571DF1D5" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

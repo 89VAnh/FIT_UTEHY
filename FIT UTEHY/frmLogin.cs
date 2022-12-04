@@ -19,9 +19,9 @@ namespace FIT_UTEHY
         QLCBEntities d = new QLCBEntities();
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (d.TaiKhoans.Where(r => r.TenDangNhap == txtUserName.Text && r.MatKhau == txtPassword.Text).Count() > 0)
+            if (d.TaiKhoans.Where(tk => tk.TenDangNhap == txtUserName.Text && tk.MatKhau == txtPassword.Text).Count() > 0)
             {
-                Global.CurrentUser = d.TaiKhoans.Where(tk => tk.TenDangNhap == txtUserName.Text).SingleOrDefault();
+                Global.CurrentUser = d.TaiKhoans.Where(tk => tk.TenDangNhap == txtUserName.Text).FirstOrDefault();//nạp tt tài khoản 
 
                 this.Hide();
                 frmMain f = new frmMain();
@@ -31,7 +31,6 @@ namespace FIT_UTEHY
             else
             {
                 MessageBox.Show("Tên tài khoản hoặc mật khẩu không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
             }
         }
 

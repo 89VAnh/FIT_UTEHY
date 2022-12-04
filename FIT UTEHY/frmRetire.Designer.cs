@@ -261,7 +261,6 @@
             this.dgvRetire.Size = new System.Drawing.Size(1119, 324);
             this.dgvRetire.TabIndex = 0;
             this.dgvRetire.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRetire_CellClick);
-            this.dgvRetire.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRetire_CellContentClick);
             // 
             // colID
             // 

@@ -31,8 +31,6 @@ namespace FIT_UTEHY
             }
         }
 
-        
-
         private void btnRegister_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có muốn đăng ký không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -54,6 +52,10 @@ namespace FIT_UTEHY
                         db.TaiKhoans.Add(tk);
                         db.SaveChanges();
                         MessageBox.Show("Chúc mừng bạn đã đăng ký thành công !");
+                        this.Hide();
+                        frmLogin f = new frmLogin();
+                        f.ShowDialog();
+                        this.Close();
                     }
                     else
                     {
@@ -62,8 +64,6 @@ namespace FIT_UTEHY
                         txtUserName.SelectionStart = 0;
                         txtUserName.SelectionLength = txtUserName.Text.Length;
                     }
-
-
                 }
                 else
                 {
@@ -81,6 +81,6 @@ namespace FIT_UTEHY
                 }
 
             }
-        }
+        }      
     }
 }

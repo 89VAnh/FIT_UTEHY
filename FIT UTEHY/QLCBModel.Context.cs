@@ -28,11 +28,11 @@ namespace FIT_UTEHY
         }
     
         public virtual DbSet<BoMon> BoMons { get; set; }
-        public virtual DbSet<CanBo> CanBoes { get; set; }
         public virtual DbSet<ChucVu> ChucVus { get; set; }
         public virtual DbSet<NghiHuu> NghiHuus { get; set; }
         public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
         public virtual DbSet<TrinhDo> TrinhDoes { get; set; }
+        public virtual DbSet<CanBo> CanBoes { get; set; }
     
         public virtual ObjectResult<GetCanBoByMaBM_Result> GetCanBoByMaBM(Nullable<short> maBM)
         {

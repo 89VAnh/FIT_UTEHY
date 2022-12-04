@@ -34,8 +34,6 @@ namespace FIT_UTEHY
             cboPosition.ValueMember = "MaCV";
             cboPosition.DisplayMember = "TenCV";
             Delete();
-
-
         }
 
         private void Delete()
@@ -51,7 +49,6 @@ namespace FIT_UTEHY
             txtEmail.Clear();
             txtPhone.Clear();
             picture.Image = Image.FromFile(Application.StartupPath.Substring(0, Application.StartupPath.Length-9) + "Resources/noimage.png");
-  
         }
 
         private void btnImage_Click(object sender, EventArgs e)
@@ -66,8 +63,6 @@ namespace FIT_UTEHY
             }
         }
 
-
-
         private void tsbAdd_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có muốn thêm không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -76,7 +71,7 @@ namespace FIT_UTEHY
                 {
 
                 CanBo cb = new CanBo();
-                cb.MaCB = Convert.ToInt32(txtID.Text);
+                cb.MaCB = int.Parse(txtID.Text);
                 cb.Hovaten = txtName.Text;
                 cb.Gioitinh = rdoMale.Checked ? "Nam" : "Nữ";
                 cb.Ngaysinh = dtBirthday.Value;
@@ -87,13 +82,10 @@ namespace FIT_UTEHY
                 cb.Email = txtEmail.Text;
                 cb.DT = txtPhone.Text;
                 cb.Hinhanh = Global.ImgToBase64(picture.Image, picture.Image.RawFormat); ;
-
                 db.CanBoes.Add(cb);
                 db.SaveChanges();
                 MessageBox.Show("Đã thêm thành công !");
                 frmCadres_Load(sender, e);
-
-
                 }
                 else
                 {
@@ -109,14 +101,8 @@ namespace FIT_UTEHY
                     if (txtPhone.Text.Trim() == "")
                         errPhone.SetError(txtPhone, "Thiếu thông tin");
                 }
-
-                
-
             }
-
         }
-
-
 
         private void tsbEdit_Click(object sender, EventArgs e)
         {
@@ -217,8 +203,6 @@ namespace FIT_UTEHY
             var data = from d in db.CanBoes
                        select new { d.MaCB, d.Hovaten, d.Gioitinh, d.Ngaysinh, d.Quequan, d.BoMon.TenBM, d.TrinhDo.TenTD, d.ChucVu.TenCV, d.Email, d.DT, d.Hinhanh };
             dgvLecturer.DataSource = data.ToList();
-
-
         }
     }
 }

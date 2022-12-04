@@ -18,6 +18,11 @@ namespace FIT_UTEHY
             InitializeComponent();
         }
 
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            btnAccount.Text = Global.CurrentUser.HoTen;
+            btnAccount.Image = Global.Base64ToImg(Global.CurrentUser.Hinhanh);
+        }
 
         private void btnList_Click(object sender, EventArgs e)
         {
@@ -36,7 +41,6 @@ namespace FIT_UTEHY
             frmCadres frm = new frmCadres();
             frm.MdiParent = this;
             frm.Show();
-
         }
 
         private void btnSubject_Click(object sender, EventArgs e)
@@ -91,13 +95,6 @@ namespace FIT_UTEHY
                 this.Close();
             }
         }
-
-        private void frmMain_Load(object sender, EventArgs e)
-        {
-            btnAccount.Text = Global.CurrentUser.HoTen;
-            btnAccount.Image = Global.Base64ToImg(Global.CurrentUser.Hinhanh);
-        }
-
 
         private void btnAccount_Click(object sender, EventArgs e)
         {

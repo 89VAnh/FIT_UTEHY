@@ -19,29 +19,7 @@ namespace FIT_UTEHY
         {
             InitializeComponent();
         }
-        //private void LoadDB()
-        //{
-        //    var data = from d in db.CanBoes
-        //               select new { d.MaCB, d.Hovaten, d.Gioitinh, d.Ngaysinh, d.Quequan, d.BoMon.TenBM, d.TrinhDo.TenTD, d.ChucVu.TenCV, d.Email, d.DT, d.Hinhanh };
-        //    dgvSearch.DataSource = data.ToList();
-        //    cboSubject.DataSource = db.BoMons.ToList();
-        //    cboSubject.ValueMember = "MaBM";
-        //    cboSubject.DisplayMember = "TenBM";
-        //}
-        //private void frmSubject_Load(object sender, EventArgs e)
-        //{
-        //    LoadDB();
-        //}
-
-        //private void btnSearch_Click(object sender, EventArgs e)
-        //{
-        //    //var data = from d in db.CanBoes
-        //    //           where d.Hovaten.Contains(txtKeyword.Text) && d.MaBM == (short)cboSubject.SelectedValue
-        //    //           select new { d.MaCB, d.Hovaten, d.Gioitinh, d.Ngaysinh, d.Quequan, d.BoMon.TenBM, d.TrinhDo.TenTD, d.ChucVu.TenCV, d.Email, d.DT, d.Hinhanh };
-        //    //dgvSubject.DataSource = data.ToList();
-        //}
-
-       
+      
         int i = 0;
         private void rdoID_CheckedChanged(object sender, EventArgs e)
         {
@@ -56,8 +34,6 @@ namespace FIT_UTEHY
 
         private void btnSearch_Click_1(object sender, EventArgs e)
         {
-            try
-            {
                 if (txtKey.Text == "")
                 {
                     MessageBox.Show("Bạn chưa nhập từ khoá", "Nhập từ khóa", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -105,15 +81,7 @@ namespace FIT_UTEHY
                         dgvSearch.DataSource = data.ToList();
                         txtKey.Clear();
                     }
-                    
-
-
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Tìm kiếm sai");
-            }
+                }         
         }
 
         private void frmSearch_Load(object sender, EventArgs e)

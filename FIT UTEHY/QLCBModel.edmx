@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="QLCBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="QLCBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="BoMon">
           <Key>
             <PropertyRef Name="MaBM" />
@@ -140,8 +140,7 @@
             <End Role="NghiHuu" EntitySet="NghiHuu" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QLCBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -151,27 +150,8 @@
           </Key>
           <Property Name="MaBM" Type="Int16" Nullable="false" />
           <Property Name="TenBM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="CanBoes" Relationship="Self.FK__CanBo__MaBM__5629CD9C" FromRole="BoMon" ToRole="CanBo" />
           <NavigationProperty Name="NghiHuus" Relationship="Self.FK__NghiHuu__MaBM__52593CB8" FromRole="BoMon" ToRole="NghiHuu" />
-        </EntityType>
-        <EntityType Name="CanBo">
-          <Key>
-            <PropertyRef Name="MaCB" />
-          </Key>
-          <Property Name="MaCB" Type="Int32" Nullable="false" />
-          <Property Name="Hovaten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Gioitinh" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="Ngaysinh" Type="DateTime" Precision="3" />
-          <Property Name="Quequan" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="MaBM" Type="Int16" />
-          <Property Name="MaTD" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-          <Property Name="MaCV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="DT" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-          <Property Name="Hinhanh" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <NavigationProperty Name="BoMon" Relationship="Self.FK__CanBo__MaBM__5629CD9C" FromRole="CanBo" ToRole="BoMon" />
-          <NavigationProperty Name="ChucVu" Relationship="Self.FK__CanBo__MaCV__5812160E" FromRole="CanBo" ToRole="ChucVu" />
-          <NavigationProperty Name="TrinhDo" Relationship="Self.FK__CanBo__MaTD__571DF1D5" FromRole="CanBo" ToRole="TrinhDo" />
+          <NavigationProperty Name="CanBoes" Relationship="QLCBModel.FK__CanBo__MaBM__5629CD9C" FromRole="BoMon" ToRole="CanBo" />
         </EntityType>
         <EntityType Name="ChucVu">
           <Key>
@@ -179,7 +159,7 @@
           </Key>
           <Property Name="MaCV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="TenCV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="CanBoes" Relationship="Self.FK__CanBo__MaCV__5812160E" FromRole="ChucVu" ToRole="CanBo" />
+          <NavigationProperty Name="CanBoes" Relationship="QLCBModel.FK__CanBo__MaCV__5812160E" FromRole="ChucVu" ToRole="CanBo" />
         </EntityType>
         <EntityType Name="NghiHuu">
           <Key>
@@ -208,20 +188,8 @@
           </Key>
           <Property Name="MaTD" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="TenTD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="CanBoes" Relationship="Self.FK__CanBo__MaTD__571DF1D5" FromRole="TrinhDo" ToRole="CanBo" />
+          <NavigationProperty Name="CanBoes" Relationship="QLCBModel.FK__CanBo__MaTD__571DF1D5" FromRole="TrinhDo" ToRole="CanBo" />
         </EntityType>
-        <Association Name="FK__CanBo__MaBM__5629CD9C">
-          <End Role="BoMon" Type="Self.BoMon" Multiplicity="0..1" />
-          <End Role="CanBo" Type="Self.CanBo" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="BoMon">
-              <PropertyRef Name="MaBM" />
-            </Principal>
-            <Dependent Role="CanBo">
-              <PropertyRef Name="MaBM" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__NghiHuu__MaBM__52593CB8">
           <End Role="BoMon" Type="Self.BoMon" Multiplicity="0..1" />
           <End Role="NghiHuu" Type="Self.NghiHuu" Multiplicity="*" />
@@ -234,59 +202,35 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CanBo__MaCV__5812160E">
-          <End Role="ChucVu" Type="Self.ChucVu" Multiplicity="0..1" />
-          <End Role="CanBo" Type="Self.CanBo" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ChucVu">
-              <PropertyRef Name="MaCV" />
-            </Principal>
-            <Dependent Role="CanBo">
-              <PropertyRef Name="MaCV" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__CanBo__MaTD__571DF1D5">
-          <End Role="TrinhDo" Type="Self.TrinhDo" Multiplicity="0..1" />
-          <End Role="CanBo" Type="Self.CanBo" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TrinhDo">
-              <PropertyRef Name="MaTD" />
-            </Principal>
-            <Dependent Role="CanBo">
-              <PropertyRef Name="MaTD" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="QLCBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="BoMons" EntityType="Self.BoMon" />
-          <EntitySet Name="CanBoes" EntityType="Self.CanBo" />
           <EntitySet Name="ChucVus" EntityType="Self.ChucVu" />
           <EntitySet Name="NghiHuus" EntityType="Self.NghiHuu" />
           <EntitySet Name="TaiKhoans" EntityType="Self.TaiKhoan" />
           <EntitySet Name="TrinhDoes" EntityType="Self.TrinhDo" />
-          <AssociationSet Name="FK__CanBo__MaBM__5629CD9C" Association="Self.FK__CanBo__MaBM__5629CD9C">
-            <End Role="BoMon" EntitySet="BoMons" />
-            <End Role="CanBo" EntitySet="CanBoes" />
-          </AssociationSet>
           <AssociationSet Name="FK__NghiHuu__MaBM__52593CB8" Association="Self.FK__NghiHuu__MaBM__52593CB8">
             <End Role="BoMon" EntitySet="BoMons" />
             <End Role="NghiHuu" EntitySet="NghiHuus" />
           </AssociationSet>
-          <AssociationSet Name="FK__CanBo__MaCV__5812160E" Association="Self.FK__CanBo__MaCV__5812160E">
+          <FunctionImport Name="GetCanBoByMaBM" ReturnType="Collection(QLCBModel.GetCanBoByMaBM_Result)">
+          <Parameter Name="MaBM" Mode="In" Type="Int16" />
+          </FunctionImport>
+          <FunctionImport Name="GetNghiHuuByMaBM" ReturnType="Collection(QLCBModel.GetNghiHuuByMaBM_Result)">
+          <Parameter Name="MaBM" Mode="In" Type="Int16" />
+          </FunctionImport>
+          <EntitySet Name="CanBoes" EntityType="QLCBModel.CanBo" />
+          <AssociationSet Name="FK__CanBo__MaBM__5629CD9C" Association="QLCBModel.FK__CanBo__MaBM__5629CD9C">
+            <End Role="BoMon" EntitySet="BoMons" />
+            <End Role="CanBo" EntitySet="CanBoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CanBo__MaCV__5812160E" Association="QLCBModel.FK__CanBo__MaCV__5812160E">
             <End Role="ChucVu" EntitySet="ChucVus" />
             <End Role="CanBo" EntitySet="CanBoes" />
           </AssociationSet>
-          <AssociationSet Name="FK__CanBo__MaTD__571DF1D5" Association="Self.FK__CanBo__MaTD__571DF1D5">
+          <AssociationSet Name="FK__CanBo__MaTD__571DF1D5" Association="QLCBModel.FK__CanBo__MaTD__571DF1D5">
             <End Role="TrinhDo" EntitySet="TrinhDoes" />
             <End Role="CanBo" EntitySet="CanBoes" />
           </AssociationSet>
-          <FunctionImport Name="GetCanBoByMaBM" ReturnType="Collection(QLCBModel.GetCanBoByMaBM_Result)">
-            <Parameter Name="MaBM" Mode="In" Type="Int16" />
-          </FunctionImport>
-          <FunctionImport Name="GetNghiHuuByMaBM" ReturnType="Collection(QLCBModel.GetNghiHuuByMaBM_Result)">
-            <Parameter Name="MaBM" Mode="In" Type="Int16" />
-          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="GetCanBoByMaBM_Result">
           <Property Type="Int32" Name="MaCB" Nullable="false" />
@@ -311,6 +255,61 @@
           <Property Type="Int16" Name="MaBM" Nullable="true" />
           <Property Type="String" Name="TenBM" Nullable="true" MaxLength="50" />
         </ComplexType>
+        <EntityType Name="CanBo">
+          <Key>
+            <PropertyRef Name="MaCB" />
+          </Key>
+          <Property Name="MaCB" Type="Int32" Nullable="false" />
+          <Property Name="Hovaten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Gioitinh" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Ngaysinh" Type="DateTime" Precision="3" />
+          <Property Name="Quequan" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MaBM" Type="Int16" />
+          <Property Name="MaTD" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="MaCV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DT" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="Hinhanh" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="BoMon" Relationship="QLCBModel.FK__CanBo__MaBM__5629CD9C" FromRole="CanBo" ToRole="BoMon" />
+          <NavigationProperty Name="ChucVu" Relationship="QLCBModel.FK__CanBo__MaCV__5812160E" FromRole="CanBo" ToRole="ChucVu" />
+          <NavigationProperty Name="TrinhDo" Relationship="QLCBModel.FK__CanBo__MaTD__571DF1D5" FromRole="CanBo" ToRole="TrinhDo" />
+        </EntityType>
+        <Association Name="FK__CanBo__MaBM__5629CD9C">
+          <End Type="QLCBModel.BoMon" Role="BoMon" Multiplicity="0..1" />
+          <End Type="QLCBModel.CanBo" Role="CanBo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BoMon">
+              <PropertyRef Name="MaBM" />
+            </Principal>
+            <Dependent Role="CanBo">
+              <PropertyRef Name="MaBM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CanBo__MaCV__5812160E">
+          <End Type="QLCBModel.ChucVu" Role="ChucVu" Multiplicity="0..1" />
+          <End Type="QLCBModel.CanBo" Role="CanBo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChucVu">
+              <PropertyRef Name="MaCV" />
+            </Principal>
+            <Dependent Role="CanBo">
+              <PropertyRef Name="MaCV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CanBo__MaTD__571DF1D5">
+          <End Type="QLCBModel.TrinhDo" Role="TrinhDo" Multiplicity="0..1" />
+          <End Type="QLCBModel.CanBo" Role="CanBo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TrinhDo">
+              <PropertyRef Name="MaTD" />
+            </Principal>
+            <Dependent Role="CanBo">
+              <PropertyRef Name="MaTD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -322,23 +321,6 @@
               <MappingFragment StoreEntitySet="BoMon">
                 <ScalarProperty Name="MaBM" ColumnName="MaBM" />
                 <ScalarProperty Name="TenBM" ColumnName="TenBM" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="CanBoes">
-            <EntityTypeMapping TypeName="QLCBModel.CanBo">
-              <MappingFragment StoreEntitySet="CanBo">
-                <ScalarProperty Name="MaCB" ColumnName="MaCB" />
-                <ScalarProperty Name="Hovaten" ColumnName="Hovaten" />
-                <ScalarProperty Name="Gioitinh" ColumnName="Gioitinh" />
-                <ScalarProperty Name="Ngaysinh" ColumnName="Ngaysinh" />
-                <ScalarProperty Name="Quequan" ColumnName="Quequan" />
-                <ScalarProperty Name="MaBM" ColumnName="MaBM" />
-                <ScalarProperty Name="MaTD" ColumnName="MaTD" />
-                <ScalarProperty Name="MaCV" ColumnName="MaCV" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="DT" ColumnName="DT" />
-                <ScalarProperty Name="Hinhanh" ColumnName="Hinhanh" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -411,6 +393,23 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="CanBoes">
+            <EntityTypeMapping TypeName="QLCBModel.CanBo">
+              <MappingFragment StoreEntitySet="CanBo">
+                <ScalarProperty Name="Hinhanh" ColumnName="Hinhanh" />
+                <ScalarProperty Name="DT" ColumnName="DT" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="MaCV" ColumnName="MaCV" />
+                <ScalarProperty Name="MaTD" ColumnName="MaTD" />
+                <ScalarProperty Name="MaBM" ColumnName="MaBM" />
+                <ScalarProperty Name="Quequan" ColumnName="Quequan" />
+                <ScalarProperty Name="Ngaysinh" ColumnName="Ngaysinh" />
+                <ScalarProperty Name="Gioitinh" ColumnName="Gioitinh" />
+                <ScalarProperty Name="Hovaten" ColumnName="Hovaten" />
+                <ScalarProperty Name="MaCB" ColumnName="MaCB" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
